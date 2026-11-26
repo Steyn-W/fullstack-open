@@ -14,7 +14,10 @@ const StatisticLine = (props) => {
   const { text, value } = props
 
   return (
-    <p>{text}: {value}</p>
+    <tr>
+      <td>{text}</td>
+      <td>{value}</td>
+    </tr>
   )
 }
 
@@ -24,15 +27,20 @@ const Statistics = (props) => {
   return (
     <div>
       <h2>Statistics</h2>
-      <StatisticLine text="Good" value={good} />
-      <StatisticLine text="Neutral" value={neutral} />
-      <StatisticLine text="Bad" value={bad} />
-      <StatisticLine text="All" value={all} />
-      <StatisticLine text="Average" value={average} />
-      <StatisticLine text="Positive" value={`${positive}%`} />
+      <table>
+        <tbody>
+          <StatisticLine text="Good" value={good} />
+          <StatisticLine text="Neutral" value={neutral} />
+          <StatisticLine text="Bad" value={bad} />
+          <StatisticLine text="All" value={all} />
+          <StatisticLine text="Average" value={average} />
+          <StatisticLine text="Positive" value={`${positive}%`} />
+        </tbody>
+      </table>
     </div>
   )
 }
+  
 
 const App = () => {
   // save clicks of each button to its own state
